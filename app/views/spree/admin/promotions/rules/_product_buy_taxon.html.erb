@@ -1,0 +1,7 @@
+<p class="field">
+  <label for="<%= "#{param_prefix}_preferred_taxon" %>">
+    <%= "Taxon" %>
+    <%= select_tag 	"#{param_prefix}[preferred_taxon]",
+     								options_for_select(Spree::Taxon.all.collect{ |t| [t.name_for_select, t.id] }, promotion_rule.preferred_taxon)  %>
+  </label>
+</p>

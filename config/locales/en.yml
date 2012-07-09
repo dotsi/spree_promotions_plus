@@ -1,0 +1,29 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  flat_percent_per_item: "Flat Percent (per item)"
+  flat_percent_per_taxon: "Flat Percent (per taxon)"
+  flat_rate_per_taxon: "Flat Rate (per taxon)"
+  flat_percent: "Flat Percent (per order)"
+  promotion_rule_types:
+    product_buy_taxon:
+      name: Taxon
+      description: There is a product with an specific taxon
+    product_buy_taxon_total:
+      name: Taxon total
+      description: There is a certain total of money from products from an specific taxon
+    product_buy_taxon_quantity:
+      name: Taxon quantity
+      description: There is a certain amount of products from an specific taxon
+    item_quantity:
+      name: Item quantity
+      description: There are more of a certain amount of products
+    order_total:
+      name: Order total
+      description: The user has made orders which sum more than a certain amount
+    order_quantity:
+      name: Order quantity
+      description: The user has made more than a certain number of order
+
