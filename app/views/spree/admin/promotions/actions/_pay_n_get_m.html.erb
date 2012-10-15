@@ -1,0 +1,36 @@
+<div class="calculator-fields">
+
+	<p class="field">
+		<% field_name = "#{param_prefix}[calculator_type]" %>
+		<%= label_tag field_name, t(:calculator) %>
+		<%= select_tag field_name,
+									 options_from_collection_for_select(@calculators, :to_s, :description, promotion_action.calculator.type),
+									 :class => 'type-select' %>
+		<% if promotion_action.calculator.respond_to?(:preferences) %>
+			&nbsp; <span class="warning"><%= t(:calculator_settings_warning) %></span>
+		<% end %>
+	</p>
+
+	<% unless promotion_action.new_record? %>
+		<div class="settings">
+			<%= label_tag "#{param_prefix}[calculator_attributes][preferred_to_get]",
+										t("preferred_to_get") %>
+			<%= text_field_tag "#{param_prefix}[calculator_attributes][preferred_to_get]",
+													promotion_action.calculator.get_preference(:to_get),
+													:size => 4 %>
+
+			<%= label_tag "#{param_prefix}[calculator_attributes][preferred_to_pay]",
+										t("preferred_to_pay") %>
+			<%= text_field_tag "#{param_prefix}[calculator_attributes][preferred_to_pay]",
+													promotion_action.calculator.get_preference(:to_pay),
+													:size => 4 %>
+
+			<%= label_tag "#{param_prefix}[calculator_attributes][preferred_product_group_id]",
+										t("preferred_product_group_id") %>
+			<%= select_tag 	"#{param_prefix}[calculator_attributes][preferred_product_group_id]",
+     								options_for_select(Spree::ProductGroup.all.collect{ |t| [t.name, t.id] }, promotion_action.calculator.get_preference(:product_group_id))  %>
+			<%= hidden_field_tag "#{param_prefix}[calculator_attributes][id]", promotion_action.calculator.id %>
+		</div>
+	<% end %>
+
+</div>

@@ -31,6 +31,9 @@ es:
   flat_rate_per_taxon: "Tarifa (por taxón)"
   flat_percent: "Porcentaje (por pedido)"
   pay_n_get_m: "Paga N y llévate M"
+  preferred_to_get: "Llévate"
+  preferred_to_pay: "Paga"
+  preferred_product_group_id: "Grupo de productos"
   promotion_rule_types:
     product_buy_taxon:
       name: Taxón
