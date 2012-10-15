@@ -1,0 +1,64 @@
+es:
+  events:
+    spree:
+      cart:
+        add: "Se añade algo al carrito"
+      order:
+        contents_changed: "Se cambia algún contenido del carrito"
+      user:
+        signup: "Se da de alta un usuario"
+      checkout:
+        coupon_code_added: "Se añade un cupón"
+      content:
+        visited: "Se visita una página"
+  activerecord:
+    attributes:
+      spree/promotion:
+        advertise: Promocionar
+        code: "Código"
+        description: "Descripción"
+        event_name: "Evento"
+        expires_at: "Termina el"
+        name: "Nombre"
+        path: "Ruta"
+        starts_at: "Comienza el"
+        usage_limit: "Límite de usos"
+  promotion_action: Acciones
+  promotion_actions: Acciones
+  add_action_of_type: "Añadir acción de tipo"
+  flat_percent_per_item: "Porcentaje (por item)"
+  flat_percent_per_taxon: "Porcentaje (por taxón)"
+  flat_rate_per_taxon: "Tarifa (por taxón)"
+  flat_percent: "Porcentaje (por pedido)"
+  pay_n_get_m: "Paga N y llévate M"
+  promotion_rule_types:
+    product_buy_taxon:
+      name: Taxón
+      description: "Hay un producto con un determinado Taxón"
+    product_buy_taxon_total:
+      name: "Dinero en Taxón"
+      description: "Hay una cierta cantidad total de dinero en productos de un terminado taxón"
+    product_buy_taxon_quantity:
+      name: "Cantidad en Taxón"
+      description: "Hay una cierta cantidad total de productos de un determinado taxón"
+    item_quantity:
+      name: "Cantidad de productos"
+      description: "Hay más, o igual, de una determinada cantidad  de productos"
+    order_total:
+      name: "Dinero en el historial de pedidos"
+      description: "El usuario ha gastado cierta cantidad de dinero en su total de pedidos"
+    order_quantity:
+      name: "Cantidad de pedidos"
+      description: "El usuario ha hecho más de una cierta cantidad de pedidos"
+    user_logged_in:
+      name: "Login de un usuario"
+      description: "El usuario hace login"
+  promotion_action_types:
+    create_adjustment:
+      name: Crear ajuste
+      description: ""
+    create_line_items:
+      name: Añadir productos
+      description: "Poblar el carrito con productos"
+
+
