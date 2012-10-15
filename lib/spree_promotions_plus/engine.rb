@@ -26,7 +26,8 @@ module SpreePromotionsPlus
 				app.config.spree.calculators.promotion_actions_create_adjustments += [
 																																							Spree::Calculator::FlatPercentPerItem,
 																																							Spree::Calculator::FlatPercentPerTaxon,
-																																							Spree::Calculator::FlatRatePerTaxon
+																																							Spree::Calculator::FlatRatePerTaxon,
+																																							Spree::Calculator::PayNGetM
 																																						 ]
 		end
 
