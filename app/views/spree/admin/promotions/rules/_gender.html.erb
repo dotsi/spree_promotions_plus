@@ -1,0 +1,6 @@
+<p class="field">
+  <label for="<%= "#{param_prefix}_preferred_gender" %>">
+  	<%= select_tag 	"#{param_prefix}[preferred_gender]", 
+  									"<option value='m'>#{t(:male)}</option><option value='f'>#{t(:female)}</option>".html_safe %>
+  </label>
+</p>

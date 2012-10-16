@@ -11,6 +11,8 @@ es:
         coupon_code_added: "Se añade un cupón"
       content:
         visited: "Se visita una página"
+      payment:
+        coupon_code_generated: "Se genera un cupón"
   activerecord:
     attributes:
       spree/promotion:
@@ -56,6 +58,12 @@ es:
     user_logged_in:
       name: "Login de un usuario"
       description: "El usuario hace login"
+    happy_birthday:
+      name: "Cumpleaños"
+      description: "Es el cumpleaños del usuario"
+    gender:
+      name: "Sexo"
+      description: "El usuario es de un determinado sexo"
   promotion_action_types:
     create_adjustment:
       name: Crear ajuste
