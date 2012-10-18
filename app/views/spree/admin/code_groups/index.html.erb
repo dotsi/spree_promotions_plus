@@ -1,0 +1,41 @@
+<%= render :partial => 'spree/admin/shared/promotions_sub_menu' %>
+
+<div class="toolbar" data-hook="toolbar">
+  <ul class="actions">
+    <li id="new_code_group_link">
+      <p>
+        <%= button_link_to t(:new_code_group), new_admin_code_group_url, { :remote => true, :icon => 'add', 'data-update' => 'new_code_group', :id => 'new_code_group_link' } %>
+      </p>
+    </li>
+  </ul>
+  <br class="clear" />
+</div>
+
+<h1><%= t(:code_groups) %></h1>
+
+<div id="new_code_group"></div>
+
+<%= image_tag 'spinner.gif', :plugin => 'spree', :style => 'display:none;', :id => 'busy_indicator' %>
+
+<table class="index" id='listing_code_groups' data-hook>
+  <thead>
+    <tr data-hook="listing_code_groups_header">
+      <th><%= t(:name) %></th>
+      <th><%= t(:limit) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @code_groups.each do |code_group| %>
+      <tr id="<%= spree_dom_id code_group %>" data-hook="listing_code_groups_row">
+        <td><%= code_group.name %></td>
+        <td><%= code_group.limit %></td>
+        <td class="actions">
+          <%= link_to_edit(code_group, :class => 'edit') %>
+          &nbsp;
+          <%= link_to_delete(code_group) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
