@@ -10,6 +10,9 @@ module Spree
 
     def eligible?(order, options = {})
       user = order.try(:user) || options[:user]
+      return false if user.blank?
+      return false if user.orders.blank?
+
 			item_total = user.orders.complete.map(&:total).sum
       item_total.send(preferred_operator == 'gte' ? :>= : :>, BigDecimal.new(preferred_amount.to_s))
     end
