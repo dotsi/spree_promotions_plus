@@ -1,4 +1,3 @@
-
 module Spree
   class Promotion::Rules::OrderTotal < PromotionRule
     preference :amount, :decimal, :default => 100.00
@@ -10,7 +9,10 @@ module Spree
 
     def eligible?(order, options = {})
       user = order.try(:user) || options[:user]
-			item_total = user.orders.complete.map(&:total).sum
+      return false if user.blank?
+      return false if user.orders.blank?
+      
+      item_total = user.orders.complete.map(&:total).sum
       item_total.send(preferred_operator == 'gte' ? :>= : :>, BigDecimal.new(preferred_amount.to_s))
     end
   end
