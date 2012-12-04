@@ -1,4 +1,3 @@
-
 module Spree
   class Promotion::Rules::OrderQuantity < PromotionRule
     preference :quantity, :integer, :default => 10
@@ -10,6 +9,9 @@ module Spree
 
     def eligible?(order, options = {})
     	user = order.try(:user) || options[:user]
+      return false if user.blank?
+      return false if user.orders.blank?
+      
       user.orders.complete.count.send(preferred_operator == 'gte' ? :>= : :>, preferred_quantity)
     end
   end
