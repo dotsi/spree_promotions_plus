@@ -3,7 +3,7 @@
     <%= link_to_with_icon 'cross', '', spree.admin_promotion_promotion_action_path(@promotion, promotion_action), :remote => true, :method => :delete %>
   </span>
   <% type_name = promotion_action.class.name.demodulize.underscore %>
-  <% calculator_name = promotion_action.calculator.class.name.demodulize.underscore %>
+  <% calculator_name = promotion_action.present? && promotion_action.respond_to?(:calculator) ? promotion_action.calculator.class.name.demodulize.underscore : '' %>
   <% param_prefix = "promotion[promotion_actions_attributes][#{promotion_action.id}]" %>
   <%= hidden_field_tag "#{param_prefix}[id]", promotion_action.id %>
   <p><%= t("promotion_action_types.#{type_name}.description") %></p>
