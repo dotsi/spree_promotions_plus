@@ -20,7 +20,8 @@ module SpreePromotionsPlus
 																						Spree::Promotion::Rules::ProductBuyTaxonTotal,
 																						Spree::Promotion::Rules::ProductBuyTaxonQuantity,
 																						Spree::Promotion::Rules::HappyBirthday,
-																						Spree::Promotion::Rules::Gender
+																						Spree::Promotion::Rules::Gender,
+																						Spree::Promotion::Rules::Club
 																					 ]
 		end
 
