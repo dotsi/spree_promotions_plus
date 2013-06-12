@@ -1,0 +1,28 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+sl:
+  hello: "Hello world"
+  flat_percent_per_item: "Odstotek (na izdelek)"
+  flat_percent_per_taxon: "Odstotek (na takson)"
+  flat_rate_per_taxon: "Znesek (na takson)"
+  flat_percent: "Odstotek (na naročilo)"
+  promotion_rule_types:
+    product_buy_taxon:
+      name: Takson
+      description: Obstaja izdelek z določenim taksonom
+    product_buy_taxon_total:
+      name: Takson znesek
+      description: Skupni seštevek cen izdelkov iz določenega taksona
+    product_buy_taxon_quantity:
+      name: Takson količina
+      description: Skupna količina izdelkov iz določenega taksona
+    item_quantity:
+      name: Število izdelkov
+      description: Obstaja več kot določeno število izdelkov
+    order_total:
+      name: Naročila skupaj
+      description: Znesek uporabnikovih naročil je več kot določeni znesek
+    order_quantity:
+      name: Naročila število
+      description: Uporabnik ima več kot določeno število naročil
