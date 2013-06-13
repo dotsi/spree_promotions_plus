@@ -25,10 +25,10 @@
 													promotion_action.calculator.get_preference(:to_pay),
 													:size => 4 %>
 
-			<%= label_tag "#{param_prefix}[calculator_attributes][preferred_product_group_id]",
-										t("preferred_product_group_id") %>
-			<%= select_tag 	"#{param_prefix}[calculator_attributes][preferred_product_group_id]",
-     								options_for_select(Spree::ProductGroup.all.collect{ |t| [t.name, t.id] }, promotion_action.calculator.get_preference(:product_group_id))  %>
+			<%= label_tag "#{param_prefix}[calculator_attributes][preferred_taxon]",
+										t("preferred_taxon") %>
+			<%= select_tag 	"#{param_prefix}[calculator_attributes][preferred_taxon]",
+     								options_for_select(Spree::Taxon.all.collect{ |t| [t.name_for_select, t.id] }, promotion_action.calculator.get_preference(:taxon))  %>
 			<%= hidden_field_tag "#{param_prefix}[calculator_attributes][id]", promotion_action.calculator.id %>
 		</div>
 	<% end %>
