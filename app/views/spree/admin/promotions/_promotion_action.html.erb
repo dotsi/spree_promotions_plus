@@ -1,13 +1,12 @@
-<div class="promotion_action <%= promotion_action.type.to_s.demodulize.underscore %>" id="<%= dom_id promotion_action %>">
-  <span class="delete">
-    <%= link_to_with_icon 'cross', '', spree.admin_promotion_promotion_action_path(@promotion, promotion_action), :remote => true, :method => :delete %>
-  </span>
+<div class="promotion_action promotion-block <%= promotion_action.type.to_s.demodulize.underscore %>" id="<%= dom_id promotion_action %>">
   <% type_name = promotion_action.class.name.demodulize.underscore %>
   <% calculator_name = promotion_action.present? && promotion_action.respond_to?(:calculator) ? promotion_action.calculator.class.name.demodulize.underscore : '' %>
+  <h6 class="promotion-title"><%= t("promotion_action_types.#{type_name}.description") %></h6>
+  <%= link_to_with_icon 'icon-trash', '', spree.admin_promotion_promotion_action_path(@promotion, promotion_action), :remote => true, :method => :delete, :class => 'delete' %>
+  
   <% param_prefix = "promotion[promotion_actions_attributes][#{promotion_action.id}]" %>
   <%= hidden_field_tag "#{param_prefix}[id]", promotion_action.id %>
-  <p><%= t("promotion_action_types.#{type_name}.description") %></p>
-
+  
   <% partial = lookup_context.find_all("spree/admin/promotions/actions/_#{calculator_name}").any? ? calculator_name : type_name %>
   <%= render :partial => "spree/admin/promotions/actions/#{partial}",
              :locals => { :promotion_action => promotion_action, :param_prefix => param_prefix } %>
